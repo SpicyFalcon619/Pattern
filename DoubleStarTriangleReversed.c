@@ -1,8 +1,8 @@
 //Pattern :
-// *     *
-// **   **
-// *** ***
 // *******
+// *** ***
+// **   **
+// *     *
 
 #include <stdio.h>
 
@@ -10,12 +10,16 @@ int main(){
     int n;
     printf("Enter the number of n: ");
     scanf("%d", &n);
-    int sp = n+1;
+    int sp = 1;
     int st = n-1;
+    for (int i = 1; i <= n*2 - 1; i++)
+    {
+        printf("*");
+    }
     printf("\n");
     for (int i = 1; i <= n-1; i++)
     {
-        for (int q = 1; q <= i; q++)
+        for (int q = 1; q <= st; q++)
         {
             printf("*");
         }
@@ -23,18 +27,13 @@ int main(){
         {
             printf(" ");
         }
-        for (int k = 1; k <= i; k++)
+        for (int k = 1; k <= st; k++)
         {
             printf("*");
         }
-        
         st--;
-        sp-=2;
+        sp+=2;
         printf("\n");
-    }
-    for (int i = 1; i <= n*2 - 1; i++)
-    {
-        printf("*");
     }
     return 0;
 }
